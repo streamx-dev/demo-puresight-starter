@@ -54,14 +54,8 @@ sh scripts/run-pim.sh
 sh scripts/run-websight.sh
 ```
 
-### Create domain in hosts
-
-```bash
-sudo sh -c 'echo "127.0.0.1 streamx.demo" >> /etc/hosts'
-```
-
 ### Verify the setup
-Visit http://streamx.demo/homepage.html. Web server will serve 404 until some data is populated into the StreamX
+Visit http://puresight.demo.127.0.0.1.nip.io/homepage.html. Web server will serve 404 until some data is populated into the StreamX
 
 Demo PIM is available at wsadmin/wsadmin http://localhost:9000/#/login
 WebSight 
