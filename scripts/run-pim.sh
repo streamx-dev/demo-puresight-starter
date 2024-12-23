@@ -1,4 +1,4 @@
-IMAGE=europe-west1-docker.pkg.dev/streamx-releases/streamx-docker-releases/streamx-demo/puresight-pim:0.0.5-jvm
+IMAGE=ghcr.io/streamx-dev/demo-puresight-pim/puresight-pim:0.0.6-jvm
 docker pull ${IMAGE}
 # Remove the old instance
 docker rm streamx-demo-sandbox-pim

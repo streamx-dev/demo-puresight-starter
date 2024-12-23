@@ -5,7 +5,6 @@ docker rm streamx-demo-sandbox-websight-cms
 docker run --name streamx-demo-sandbox-websight-cms \
   -p 9001:8080 \
   -p 5009:5009 \
-  --rm --mount source=segment-store-repository,target=/websight/launcher/repository \
   -e JAVA_DEBUG_PORT=5009 \
   -e STREAMX_PUBLICATION_ENABLE=true \
   -e PURESIGHT_STREAMX_REST_INGESTION_HOST=http://host.docker.internal:8080 \
