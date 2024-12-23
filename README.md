@@ -205,7 +205,7 @@ sh scripts/reviews/publish.sh B071FMSYNH
 
 - PIM informed StreamX about a **new product**.
 - CMS informed StreamX about a **new page**.
-- StreamX updated the **sitemap** and the **search functionality**.
+- StreamX updated the **sitemap** and the **search index**.
 
 ---
 
