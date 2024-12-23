@@ -187,20 +187,17 @@ sh scripts/reviews/publish.sh B071FMSYNH
 
 #### Scenario
 
-1. **Unpublish product `B075X5TN2K`** (if not already done).
-2. Open the Puresight homepage:
-    - Search for **b075x5tn2k** → Show **no results**.
-3. Open the **sitemap.xml** file:
-    - Search for `b075x5tn2k` → Show **no results**.
+1. Unpublish product `B075X5TN2K` (if not already done).
+2. Open the Puresight homepage and search for `b075x5tn2k` → Show **no results**.
+3. Open the **sitemap.xml** file and search for `b075x5tn2k` → Show **no results**.
 4. Open the PIM and publish the product.
-5. Repeat the search on the Puresight homepage for **b075x5tn2k** → Show the match.
+5. Repeat the search on the Puresight homepage for `b075x5tn2k` → Show the match.
 6. Open **sitemap.xml** → Show the product match.
-7. **Unpublish the blog page**:  
-   "Simplify Your Space: A Guide to Decluttering" from CMS.
-    - Search for **"simplify-your-space"** in sitemap.xml → No results.
-    - Search for **"simplify"** on the site → No results.
-8. **Publish the blog page** again:
-    - Show results in **sitemap.xml** and search.
+7. Unpublish the blog page "Simplify Your Space: A Guide to Decluttering" from CMS.
+8. Search for **"simplify-your-space"** in sitemap.xml → No results.
+9. Search for **"simplify"** on the site → No results.
+10. Publish the blog page
+11. Show results in **sitemap.xml** and search.
 
 ---
 
