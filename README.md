@@ -63,7 +63,7 @@ sh scripts/run-proxy.sh
 
 ### Verify the Setup
 
-- Visit: [http://puresight.127.0.0.1.nip.io/homepage.html](http://puresight.127.0.0.1.nip.io/homepage.html).  
+- Visit: [http://PureSight.127.0.0.1.nip.io/homepage.html](http://PureSight.127.0.0.1.nip.io/homepage.html).  
   The web server will serve a 404 error until some data is populated in StreamX.
 
 - Demo PIM is available at:  
@@ -80,11 +80,11 @@ sh scripts/run-proxy.sh
 
 ### WebSight CMS
 
-1. Go to: [http://cms.127.0.0.1.nip.io/apps/groovy#/etc/groovy-console/puresight/publish-components.groovy](http://cms.127.0.0.1.nip.io/apps/groovy#/etc/groovy-console/puresight/publish-components.groovy)  
+1. Go to: [http://cms.127.0.0.1.nip.io/apps/groovy#/etc/groovy-console/PureSight/publish-components.groovy](http://cms.127.0.0.1.nip.io/apps/groovy#/etc/groovy-console/PureSight/publish-components.groovy)  
    Click the **"Run"** button.  
    This action will ingest component renderers and configurations needed for dynamic components that are not managed by CMS.
 
-2. Visit: [http://cms.127.0.0.1.nip.io/apps/websight/index.html/content/puresight/pages](http://cms.127.0.0.1.nip.io/apps/websight/index.html/content/puresight/pages).  
+2. Visit: [http://cms.127.0.0.1.nip.io/apps/websight/index.html/content/PureSight/pages](http://cms.127.0.0.1.nip.io/apps/websight/index.html/content/PureSight/pages).  
    Publish all the pages from the list (including pages in the subtree).
 
 3. On the left-hand side, switch to **Assets Mode** and publish all assets.
@@ -194,10 +194,10 @@ sh scripts/reviews/publish.sh B071FMSYNH
 #### Scenario
 
 1. Unpublish product `B075X5TN2K` (if not already done).
-2. Open the Puresight homepage and search for `b075x5tn2k` → Show **no results**.
-3. Open the **sitemap.xml** file and search for `b075x5tn2k` → Show **no results**.
+2. Open the PureSight homepage and search for `B075X5TN2K` → Show **no results**.
+3. Open the **sitemap.xml** file and search for `B075X5TN2K` → Show **no results**.
 4. Open the PIM and publish the product.
-5. Repeat the search on the Puresight homepage for `b075x5tn2k` → Show the match.
+5. Repeat the search on the PureSight homepage for `B075X5TN2K` → Show the match.
 6. Open **sitemap.xml** → Show the product match.
 7. Unpublish the blog page "Simplify Your Space: A Guide to Decluttering" from CMS.
 8. Search for **"simplify-your-space"** in sitemap.xml → No results.
