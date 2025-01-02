@@ -55,17 +55,23 @@ sh scripts/run-pim.sh
 sh scripts/run-websight.sh
 ```
 
+### Run Proxy Server
+
+```bash
+sh scripts/run-proxy.sh
+```
+
 ### Verify the Setup
 
-- Visit: [http://puresight.demo.127.0.0.1.nip.io/homepage.html](http://puresight.demo.127.0.0.1.nip.io/homepage.html).  
+- Visit: [http://puresight.127.0.0.1.nip.io/homepage.html](http://puresight.127.0.0.1.nip.io/homepage.html).  
   The web server will serve a 404 error until some data is populated in StreamX.
 
 - Demo PIM is available at:  
-  **URL**: [http://localhost:9000/#/login](http://localhost:9000/#/login)  
+  **URL**: [http://pim.127.0.0.1.nip.io/#/login](http://pim.127.0.0.1.nip.io/#/login)  
   **Credentials**: `wsadmin/wsadmin`
 
 - WebSight is available at:  
-  **URL**: [http://localhost:9001/](http://localhost:9001/)  
+  **URL**: [http://cms.127.0.0.1.nip.io/](http://cms.127.0.0.1.nip.io/)  
   **Credentials**: `wsadmin/wsadmin`
 
 ---
@@ -74,11 +80,11 @@ sh scripts/run-websight.sh
 
 ### WebSight CMS
 
-1. Go to: [http://localhost:9001/apps/groovy#/etc/groovy-console/puresight/publish-components.groovy](http://localhost:9001/apps/groovy#/etc/groovy-console/puresight/publish-components.groovy)  
+1. Go to: [http://cms.127.0.0.1.nip.io/apps/groovy#/etc/groovy-console/puresight/publish-components.groovy](http://cms.127.0.0.1.nip.io/apps/groovy#/etc/groovy-console/puresight/publish-components.groovy)  
    Click the **"Run"** button.  
    This action will ingest component renderers and configurations needed for dynamic components that are not managed by CMS.
 
-2. Visit: [http://localhost:9001/apps/websight/index.html/content/puresight/pages](http://localhost:9001/apps/websight/index.html/content/puresight/pages).  
+2. Visit: [http://cms.127.0.0.1.nip.io/apps/websight/index.html/content/puresight/pages](http://cms.127.0.0.1.nip.io/apps/websight/index.html/content/puresight/pages).  
    Publish all the pages from the list (including pages in the subtree).
 
 3. On the left-hand side, switch to **Assets Mode** and publish all assets.
@@ -87,7 +93,7 @@ sh scripts/run-websight.sh
 
 ### PureSight PIM
 
-Visit: [http://localhost:9000](http://localhost:9000) and click the **"Sync All"** button.
+Visit: [http://pim.127.0.0.1.nip.io](http://pim.127.0.0.1.nip.io) and click the **"Sync All"** button.
 
 ---
 

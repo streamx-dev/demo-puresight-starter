@@ -20,14 +20,14 @@ delivery:
     ingress:
       enabled: true
       hosts:
-        - host: puresight.demo.127.0.0.1.nip.io
+        - host: puresight.127.0.0.1.nip.io
           paths:
             - servicePort: 80
   blueprint-search:
     ingress:
       enabled: true
       hosts:
-        - host: puresight.demo.127.0.0.1.nip.io
+        - host: puresight.127.0.0.1.nip.io
           paths:
             - path: /search
 

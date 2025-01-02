@@ -1,4 +1,4 @@
-IMAGE=europe-west1-docker.pkg.dev/websight-io/websight-docker-releases/websight-cms-starter:1.25.1
+IMAGE=europe-west1-docker.pkg.dev/websight-io/websight-docker-releases/websight-cms-starter:1.25.2
 docker pull ${IMAGE}
 # Remove the old instance
 docker rm streamx-demo-sandbox-websight-cms
