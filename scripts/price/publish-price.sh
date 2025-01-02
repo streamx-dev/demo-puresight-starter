@@ -1,4 +1,4 @@
-INGESTION_URL="http://localhost:8080"
+INGESTION_URL="http://localhost"
 PRODUCT_ID=${1:-B071FMSYNH}
 PRICE=${2:-2559}
 

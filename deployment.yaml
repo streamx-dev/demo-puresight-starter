@@ -1,0 +1,33 @@
+tenantConfig:
+  inboxesPartitions: 2
+  relaysPartitions: 2
+  outboxesPartitions: 2
+  inboxesCompactionThresholdBytes: 10240
+  outboxesCompactionThresholdBytes: 10240
+  storesCompactionThresholdBytes: 10240
+  subscriptionExpirationTimeMinutes: 240
+ingestion:
+  rest-ingestion:
+    ingress:
+      enabled: true
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-body-size: "500m"
+      hosts:
+        - host: localhost
+        - host: host.docker.internal
+delivery:
+  blueprint-web:
+    ingress:
+      enabled: true
+      hosts:
+        - host: puresight.demo.127.0.0.1.nip.io
+          paths:
+            - servicePort: 80
+  blueprint-search:
+    ingress:
+      enabled: true
+      hosts:
+        - host: puresight.demo.127.0.0.1.nip.io
+          paths:
+            - path: /search
+
