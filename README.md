@@ -63,7 +63,7 @@ sh scripts/run-proxy.sh
 
 ### Verify the Setup
 
-- Visit: [http://PureSight.127.0.0.1.nip.io/homepage.html](http://PureSight.127.0.0.1.nip.io/homepage.html).  
+- Visit: [http://puresight.127.0.0.1.nip.io/homepage.html](http://puresight.127.0.0.1.nip.io/homepage.html).  
   The web server will serve a 404 error until some data is populated in StreamX.
 
 - Demo PIM is available at:  
