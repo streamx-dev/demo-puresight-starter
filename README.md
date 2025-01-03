@@ -6,6 +6,8 @@ The PureSight demo showcases an example usage of StreamX as a complete web solut
 - **PureSight PIM**: Acts as a source of product information.
 - **Bash scripts**: Simulate a source of pricing data.
 
+![Demo Architecture](./assets/demo.png "Demo Architecture")
+
 The **StreamX Mesh** is built using StreamX core components, which provide essential functionalities such as:
 
 - Rendering engine
