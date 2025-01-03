@@ -1,4 +1,4 @@
-INGESTION_URL="http://localhost"
+INGESTION_URL="http://ingestion.127.0.0.1.nip.io"
 PRODUCT_ID=${1:-B071FMSYNH}
 
 curl -o - -X POST "${INGESTION_URL}/ingestion/v1/channels/data/messages" \

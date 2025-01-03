@@ -13,7 +13,7 @@ ingestion:
       annotations:
         nginx.ingress.kubernetes.io/proxy-body-size: "500m"
       hosts:
-        - host: localhost
+        - host: ingestion.127.0.0.1.nip.io
         - host: host.docker.internal
 delivery:
   blueprint-web:
