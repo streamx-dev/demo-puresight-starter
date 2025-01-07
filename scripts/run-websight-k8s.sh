@@ -1,3 +1,5 @@
+STREAMX_TOKEN=$(kubectl get secrets sx-sec-auth-jwt-pim -o jsonpath  -o jsonpath="{.data.jwt}" | base64 --decode)
+
 IMAGE=europe-west1-docker.pkg.dev/websight-io/websight-docker-releases/websight-cms-starter:1.25.2
 docker pull ${IMAGE}
 # Remove the old instance
