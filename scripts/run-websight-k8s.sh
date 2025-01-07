@@ -1,4 +1,4 @@
-STREAMX_TOKEN=$(kubectl get secrets sx-sec-auth-jwt-pim -o jsonpath  -o jsonpath="{.data.jwt}" | base64 --decode)
+STREAMX_TOKEN=$(kubectl get secrets sx-sec-auth-jwt-websight -o jsonpath  -o jsonpath="{.data.jwt}" | base64 --decode)
 
 IMAGE=europe-west1-docker.pkg.dev/websight-io/websight-docker-releases/websight-cms-starter:1.25.2
 docker pull ${IMAGE}
@@ -11,4 +11,5 @@ docker run --name streamx-demo-sandbox-websight-cms \
   -e JAVA_DEBUG_PORT=5009 \
   -e STREAMX_PUBLICATION_ENABLE=true \
   -e PURESIGHT_STREAMX_REST_INGESTION_HOST=http://host.docker.internal \
+  - PURESIGHT_STREAMX_REST_INGESTION_AUTH_TOKEN="$STREAMX_TOKEN" \
   ${IMAGE}
