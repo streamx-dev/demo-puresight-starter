@@ -1,5 +1,5 @@
 #!/bin/bash
-docker rm nginx-proxy
+docker rm -f nginx-proxy >/dev/null 2>&1
 
 echo "The following URLs are available:"
 echo " - http://puresight.127.0.0.1.nip.io"
