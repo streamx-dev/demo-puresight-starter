@@ -1,5 +1,5 @@
 defaultRegistry: ghcr.io/streamx-dev/streamx-blueprints
-defaultImageTag: 1.0.0-jvm
+defaultImageTag: 1.0.2-jvm
 
 sources:
   pim:
@@ -90,6 +90,15 @@ processing:
       configs:
         - "aggregator.properties"
 
+  blueprint-data-to-indexable-resource-converter:
+    image: data-to-indexable-resource-converter-processing-service
+    incoming:
+      data:
+        topic: inboxes/data
+    outgoing:
+      indexable-resources:
+        topic: outboxes/indexable-resources
+
   blueprint-rendering-engine:
     image: rendering-engine-processing-service
     incoming:
@@ -159,15 +168,19 @@ delivery:
       indexable-resource-fragments:
         topic: outboxes/indexable-resource-fragments
     port: 8082
+    volumesFrom:
+      configs:
+        - "opensearch/service-init:/deployments/opensearch/service-init"
     environment:
       QUARKUS_ELASTICSEARCH_USERNAME: "admin"
       QUARKUS_ELASTICSEARCH_HOSTS: "blueprint-search.opensearch:9200"
+      STREAMX_BLUEPRINTS_OPENSEARCH-DELIVERY-SERVICE_MIGRATION-SCRIPT-LOCATIONS: "classpath:opensearch/service-init,file:opensearch/service-init"
     environmentFrom:
       secrets:
         - "opensearch-secrets.properties"
     components:
       opensearch:
-        image: "docker.io/opensearchproject/opensearch:2.13.0"
+        image: "docker.io/opensearchproject/opensearch:2.16.0"
         ports:
           - 9200:9200
           - 9300:9300
@@ -191,12 +204,12 @@ delivery:
     environment:
       STREAMX_BLUEPRINTS_WEB-DELIVERY-SERVICE_RESOURCES_DIRECTORY: "/srv/www"
     repositoryVolume: "/srv/www"
-    port: 8081
+    port: 8083
     components:
       webserver:
         image: "docker.io/library/nginx:1.26.0"
         ports:
-          - 80:80
+          - 8084:80
         repositoryVolume: "/usr/share/nginx/html"
         volumesFrom:
           configs:
