@@ -10,6 +10,6 @@ docker run --name streamx-demo-sandbox-websight-cms \
   -p 5009:5009 \
   -e JAVA_DEBUG_PORT=5009 \
   -e STREAMX_PUBLICATION_ENABLE=true \
-  -e PURESIGHT_STREAMX_REST_INGESTION_HOST=http://host.docker.internal \
+  -e PURESIGHT_STREAMX_REST_INGESTION_HOST=http://ingestion.20.126.186.199.nip.io \
   -e PURESIGHT_STREAMX_REST_INGESTION_AUTH_TOKEN="$STREAMX_TOKEN" \
   ${IMAGE}
