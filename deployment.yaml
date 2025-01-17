@@ -4,34 +4,6 @@ defaults:
       requests:
         cpu: 400m
         memory: 512Mi
-    probes: # TODO: Remove default kubernetes configs after default StreamX Operator defaults adjustment.
-      liveness:
-        httpGet:
-          path: /q/health/live
-          port: 8080
-        initialDelaySeconds: 0        # Default value
-        periodSeconds: 10             # Default value
-        timeoutSeconds: 1             # Default value
-        successThreshold: 1           # Default value
-        failureThreshold: 3           # Default value
-        readiness:
-          httpGet:
-            path: /q/health/ready
-            port: 8080
-          initialDelaySeconds: 0        # Default value
-          periodSeconds: 10             # Default value
-          timeoutSeconds: 1             # Default value
-          successThreshold: 1           # Default value
-          failureThreshold: 3           # Default value
-        startup:
-          httpGet:
-            path: /q/health/startup
-            port: 8080
-          initialDelaySeconds: 0        # Default value
-          periodSeconds: 10             # Default value
-          timeoutSeconds: 1             # Default value
-          successThreshold: 1           # Default value
-          failureThreshold: 3
   delivery:
     replicas: 3
 
@@ -59,6 +31,25 @@ delivery:
           secretName: blueprint-web.crt
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-cert-cluster-issuer"
+    probes:
+      readiness:
+        httpGet:
+          path: /q/health/ready
+          port: 8080
+        initialDelaySeconds: 3
+        timeoutSeconds: 2
+        periodSeconds: 5
+        successThreshold: 1
+        failureThreshold: 3
+      startup:
+        httpGet:
+          path: /q/health/started
+          port: 8080
+        initialDelaySeconds: 10
+        timeoutSeconds: 2
+        periodSeconds: 10
+        successThreshold: 1
+        failureThreshold: 10
   blueprint-search:
     ingress:
       enabled: true
@@ -74,7 +65,24 @@ delivery:
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-cert-cluster-issuer"
     probes:
-      liveness: { }
+      readiness:
+        httpGet:
+          path: /q/health/ready
+          port: 8080
+        initialDelaySeconds: 3
+        timeoutSeconds: 2
+        periodSeconds: 5
+        successThreshold: 1
+        failureThreshold: 3
+      startup:
+        httpGet:
+          path: /q/health/started
+          port: 8080
+        initialDelaySeconds: 10
+        timeoutSeconds: 2
+        periodSeconds: 10
+        successThreshold: 1
+        failureThreshold: 10
     components:
       opensearch:
         sidecar: true
