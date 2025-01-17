@@ -63,7 +63,7 @@ sh scripts/run-websight.sh
 ### Run Proxy Server
 
 ```bash
-sh scripts/run-proxy.sh
+sh env/local/run-proxy.sh
 ```
 
 ### Verify the Setup
