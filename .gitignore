@@ -12,3 +12,6 @@ auth/*
 .env/*
 /secrets/generated/
 /target
+
+# streamx run delivery web service content repository
+/repository

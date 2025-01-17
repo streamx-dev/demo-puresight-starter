@@ -1,9 +1,8 @@
-INGESTION_URL="http://ingestion.127.0.0.1.nip.io"
 PRODUCT_ID=${1:-B071FMSYNH}
 
-curl -o - -X POST "${INGESTION_URL}/ingestion/v1/channels/data/messages" \
+curl -o - -X POST "${STREAMX_INGESTION_URL}/ingestion/v1/channels/data/messages" \
   -H 'Content-Type: application/json' \
-  -H "Authorization: Bearer ${TOKEN}" \
+  -H "Authorization: Bearer ${STREAMX_TOKEN_PIM}" \
   -d '{
         "key" : "review:'${PRODUCT_ID}':1",
         "action" : "publish",
@@ -18,9 +17,9 @@ curl -o - -X POST "${INGESTION_URL}/ingestion/v1/channels/data/messages" \
         }
       }'
 
-curl -o - -X POST "${INGESTION_URL}/ingestion/v1/channels/data/messages" \
+curl -o - -X POST "${STREAMX_INGESTION_URL}/ingestion/v1/channels/data/messages" \
   -H 'Content-Type: application/json' \
-  -H "Authorization: Bearer ${TOKEN}" \
+  -H "Authorization: Bearer ${STREAMX_TOKEN_PIM}" \
   -d '{
         "key" : "review:'${PRODUCT_ID}':2",
         "action" : "publish",
