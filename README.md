@@ -38,6 +38,7 @@ The PureSight demo allows you to see each of these elements in action in real-ti
 Start the mesh defined in `mesh.yaml`:
 
 ```bash
+source env/local/.env.sh
 streamx run -f mesh.yaml
 ```
 
@@ -48,12 +49,14 @@ Wait until the process completes.
 Start PIM:
 
 ```bash
+source env/local/.env.sh
 sh scripts/run-pim.sh
 ```
 
 ### Run WebSight CMS
 
 ```bash
+source env/local/.env.sh
 sh scripts/run-websight.sh
 ```
 
@@ -104,6 +107,7 @@ Visit: [http://pim.127.0.0.1.nip.io](http://pim.127.0.0.1.nip.io) and click the 
 You can change the price of any product by passing the product ID and the desired price:
 
 ```bash
+source env/local/.env.sh
 sh scripts/prices/publish-price.sh B071FMSYNH 994
 ```
 
@@ -114,6 +118,7 @@ sh scripts/prices/publish-price.sh B071FMSYNH 994
 You can also add reviews for a product:
 
 ```bash
+source env/local/.env.sh
 sh scripts/reviews/publish.sh B071FMSYNH
 ```
 

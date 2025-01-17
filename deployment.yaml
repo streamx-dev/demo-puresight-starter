@@ -43,19 +43,19 @@ ingestion:
       annotations:
         nginx.ingress.kubernetes.io/proxy-body-size: "500m"
       hosts:
-        - host: ingestion.20.126.186.199.nip.io
+        - host: ingestion.${streamx-ingress-ip}.nip.io
 delivery:
   blueprint-web:
     ingress:
       enabled: true
       ingressClassName: "nginx"
       hosts:
-        - host: puresight.20.126.186.199.nip.io
+        - host: puresight.${streamx-ingress-ip}.nip.io
           paths:
             - servicePort: 80
       tls:
         - hosts:
-            - puresight.20.126.186.199.nip.io
+            - puresight.${streamx-ingress-ip}.nip.io
           secretName: blueprint-web.crt
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-cert-cluster-issuer"
@@ -64,12 +64,12 @@ delivery:
       enabled: true
       ingressClassName: "nginx"
       hosts:
-        - host: puresight.20.126.186.199.nip.io
+        - host: puresight.${streamx-ingress-ip}.nip.io
           paths:
             - path: /search
       tls:
         - hosts:
-            - puresight.20.126.186.199.nip.io
+            - puresight.${streamx-ingress-ip}.nip.io
           secretName: blueprint-search.crt
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-cert-cluster-issuer"

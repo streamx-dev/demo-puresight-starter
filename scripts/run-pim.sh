@@ -5,6 +5,7 @@ docker rm streamx-demo-sandbox-pim
 docker run --name streamx-demo-sandbox-pim \
   --add-host=host.docker.internal:host-gateway \
   -p 9000:8080 \
-  -e STREAMX_URL=http://host.docker.internal \
+  -e STREAMX_URL="$STREAMX_INGESTION_URL" \
+  -e STREAMX_TOKEN="$STREAMX_TOKEN_PIM" \
   -e QUARKUS_HTTP_AUTH_FORM_TIMEOUT=PT1M \
   ${IMAGE}
