@@ -4,7 +4,7 @@ defaults:
       requests:
         cpu: 400m
         memory: 512Mi
-    probes:
+    probes: # TODO: Remove default kubernetes configs after default StreamX Operator defaults adjustment.
       liveness:
         httpGet:
           path: /q/health/live
@@ -74,7 +74,7 @@ delivery:
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-cert-cluster-issuer"
     probes:
-      liveness: {}
+      liveness: { }
     components:
       opensearch:
         sidecar: true
