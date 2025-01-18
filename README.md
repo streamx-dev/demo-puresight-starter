@@ -63,6 +63,13 @@ sh scripts/run-websight.sh
 sh scripts/run-proxy.sh
 ```
 
+> **Note:** CMS, PIM, and Mesh containers are terminated using `CTRL+C`. However, the proxy server runs as a daemon and must be stopped using the following command:
+> ```bash
+> sh scripts/stop-proxy.sh
+> ```
+
+
+
 ### Verify the Setup
 
 - Visit: [http://puresight.127.0.0.1.nip.io/homepage.html](http://puresight.127.0.0.1.nip.io/homepage.html).  

@@ -1,5 +1,8 @@
 **/.streamx/*
 
+### Repositories mounts location ###
+repository
+
 ### IntelliJ IDEA ###
 .idea/*
 *.iws
